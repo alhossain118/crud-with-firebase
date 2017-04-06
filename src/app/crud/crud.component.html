@@ -1,3 +1,36 @@
-<p>
-  crud works!
-</p>
+
+<div class="row">
+<div class="col-xs-6">
+  <form (ngSubmit)="add(name.value,number.value)">
+    
+  Name:   <input type="text" #name> <br>
+  Number: <input type="text" #number>
+  <button>Add to the DataBase</button>
+ </form>
+
+</div>
+
+
+<div class="col-xs-6">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of crud | async">
+      <td>{{c.name}}</td>
+      <td>{{c.number}}
+      <td><button (click)="remove(c.$key)" class="btn btn-danger" >Delete Me</button></td>
+    </tr>
+  </tbody>
+
+</table>
+</div>
+</div>
+
+<button (click)="uuidGenerate()"> Gen UUID</button>
+<!--<button class='btn btn-primary' (click)="update()">Add to the database</button>-->

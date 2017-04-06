@@ -5,14 +5,16 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { CrudComponent } from './crud/crud.component';
+import { UUID } from 'angular2-uuid';
+
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyDRM6CFk9Y7GVDKg-As33NmzuSC2kDPNm4",
-    authDomain: "pepper-4bd94.firebaseapp.com",
-    databaseURL: "https://pepper-4bd94.firebaseio.com",
-    projectId: "pepper-4bd94",
-    storageBucket: "pepper-4bd94.appspot.com",
-    messagingSenderId: "532151083400"
+  apiKey: "AIzaSyCvklrB0Loye2cXEXn2F_MCS0B821EizKQ",
+    authDomain: "crud-ad7e9.firebaseapp.com",
+    databaseURL: "https://crud-ad7e9.firebaseio.com",
+    projectId: "crud-ad7e9",
+    storageBucket: "crud-ad7e9.appspot.com",
+    messagingSenderId: "956266954831"
 }
 
 @NgModule({
@@ -26,7 +28,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [UUID],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

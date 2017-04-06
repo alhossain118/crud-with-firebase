@@ -13,30 +13,30 @@ export class AppComponent  {
 
 
   constructor(private af: AngularFire) {
-    console.log('af',af)
+    // console.log('af',af)
   }
 
   ngOnInit() {
-    this.cuisines = this.af.database.list('/cuisines');
-    this.restaurant = this.af.database.object('/restaurant');
+    // this.cuisines = this.af.database.list('/cuisines');
+    // this.restaurant = this.af.database.object('/restaurant');
   }
 
-  add() {
-    this.cuisines.push({
-      name: 'Asian',
-      details: {
-        description: "..."
-      }
-    });
-  }
-  //update for non-desructive
-  update() {
-    this.af.database.object('/favorites/1/10').set(true)
-  }
-  remove() {
-    this.af.database.object('/restaurant').remove()
-    .then(x => console.log("success"))
-    .catch(error => console.log('fail'))
-  }
+  // add() {
+  //   this.cuisines.push({
+  //     name: 'Asian',
+  //     details: {
+  //       description: "..."
+  //     }
+  //   });
+  // }
+  // //update for non-desructive
+  // update() {
+  //   this.af.database.object('/favorites/1/10').set(true)
+  // }
+  // remove() {
+  //   this.af.database.object('/restaurant').remove()
+  //   .then(x => console.log("success"))
+  //   .catch(error => console.log('fail'))
+  // }
 
 }
