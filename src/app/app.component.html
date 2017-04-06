@@ -1,0 +1,22 @@
+<h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let c of cuisines | async">{{c.$value}}</li>
+</ul>
+
+<!-- async, data arrives asynchronously,
+  will create a subscribtion, then will remove the subscription
+ -->
+
+ {{ (restaurant | async)?.name }}
+
+ <!-- "?" name is resolved when it is not null  -->
+
+ <button type="button" name="button" (click)="add()">Add</button>
+ <button type="button" name="button" (click)="update()">Update</button>
+ <button type="button" name="button" (click)="remove()">Renive</button>
+
+
+<app-crud></app-crud>
